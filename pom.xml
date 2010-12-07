@@ -35,6 +35,10 @@
             		<artifactId>jta</artifactId>
             		<groupId>jta</groupId>
             	</exclusion>
+            	<exclusion>
+            		<artifactId>jndi</artifactId>
+            		<groupId>jndi</groupId>
+            	</exclusion>
             </exclusions>
         </dependency>
 	</dependencies>
