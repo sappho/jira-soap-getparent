@@ -26,8 +26,20 @@
             <scope>provided</scope>
             <exclusions>
             	<exclusion>
-            		<artifactId>javax.jms</artifactId>
-            		<groupId>jms</groupId>
+            		<artifactId>jta</artifactId>
+            		<groupId>jta</groupId>
+            	</exclusion>
+            	<exclusion>
+            		<artifactId>jndi</artifactId>
+            		<groupId>jndi</groupId>
+            	</exclusion>
+            	<exclusion>
+            		<artifactId>javax.activation</artifactId>
+            		<groupId>activation</groupId>
+            	</exclusion>
+            	<exclusion>
+            		<artifactId>javax.mail</artifactId>
+            		<groupId>mail</groupId>
             	</exclusion>
             </exclusions>
         </dependency>
@@ -46,8 +58,12 @@
             		<groupId>jndi</groupId>
             	</exclusion>
             	<exclusion>
-            		<artifactId>javax.jms</artifactId>
-            		<groupId>jms</groupId>
+            		<artifactId>javax.activation</artifactId>
+            		<groupId>activation</groupId>
+            	</exclusion>
+            	<exclusion>
+            		<artifactId>javax.mail</artifactId>
+            		<groupId>mail</groupId>
             	</exclusion>
             </exclusions>
         </dependency>
