@@ -24,24 +24,6 @@
             <artifactId>atlassian-jira-rpc-plugin</artifactId>
             <version>4.2</version>
             <scope>provided</scope>
-            <exclusions>
-            	<exclusion>
-            		<artifactId>jta</artifactId>
-            		<groupId>jta</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>jndi</artifactId>
-            		<groupId>jndi</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>javax.activation</artifactId>
-            		<groupId>activation</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>javax.mail</artifactId>
-            		<groupId>mail</groupId>
-            	</exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.atlassian.jira</groupId>
@@ -58,12 +40,8 @@
             		<groupId>jndi</groupId>
             	</exclusion>
             	<exclusion>
-            		<artifactId>javax.activation</artifactId>
-            		<groupId>activation</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>javax.mail</artifactId>
-            		<groupId>mail</groupId>
+            		<artifactId>log4j</artifactId>
+            		<groupId>log4j</groupId>
             	</exclusion>
             </exclusions>
         </dependency>
