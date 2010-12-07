@@ -1,19 +1,19 @@
 <atlassian-plugin key="sappho.jira.soap.getparent.rpc"
-	name="Sappho Jira SOAP services extension plugin">
+	name="Sappho Jira SOAP Services GetParent Plugin">
 	<plugin-info>
-		<description key="sappho.jira.soap.getparent.desc">Sappho Jira SOAP services plugin</description>
+		<description key="sappho.jira.soap.getparent.desc">Sappho Jira SOAP Services GetParent Plugin</description>
 		<version>4.2</version>
 		<application-version min="4.0" max="4.2" />
 		<vendor name="Sappho" url="http://www.sappho.org.uk/" />
 	</plugin-info>
 	<component system="true" key="sappho.jira.soap.getparent.component"
-		name="Sappho Jira SOAP services extension component" class="uk.org.sappho.jira.soap.getparent.GetParentImpl">
+		name="Sappho Jira SOAP Services GetParent Plugin Component" class="uk.org.sappho.jira.soap.getparent.GetParentImpl">
 		<interface>uk.org.sappho.jira.soap.getparent.GetParent
 		</interface>
 	</component>
-	<rpc-soap key="sappho.jira.soap.getparent.impl" name="Sappho Jira SOAP services extension"
+	<rpc-soap key="sappho.jira.soap.getparent.impl" name="Sappho Jira SOAP Services GetParent Plugin Implementation"
 		class="uk.org.sappho.jira.soap.getparent.GetParentImpl">
-		<description>Sappho Jira SOAP services extension</description>
+		<description>Sappho Jira SOAP Services GetParent Plugin Implementation</description>
 		<service-path>sappho-getparent-v1</service-path>
 		<published-interface>uk.org.sappho.jira.soap.getparent.GetParent
 		</published-interface>
