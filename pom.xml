@@ -24,6 +24,12 @@
             <artifactId>atlassian-jira-rpc-plugin</artifactId>
             <version>4.2</version>
             <scope>provided</scope>
+            <exclusions>
+            	<exclusion>
+            		<artifactId>javax.jms</artifactId>
+            		<groupId>jms</groupId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.atlassian.jira</groupId>
@@ -38,10 +44,6 @@
             	<exclusion>
             		<artifactId>jndi</artifactId>
             		<groupId>jndi</groupId>
-            	</exclusion>
-            	<exclusion>
-            		<artifactId>javax.jms</artifactId>
-            		<groupId>jms</groupId>
             	</exclusion>
             </exclusions>
         </dependency>
