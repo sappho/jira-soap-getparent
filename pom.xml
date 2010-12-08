@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>uk.org.sappho.pom</groupId>
 		<artifactId>sappho</artifactId>
-		<version>1-SNAPSHOT</version>
+		<version>1</version>
 	</parent>
 
 	<groupId>uk.org.sappho.jira.soap</groupId>
