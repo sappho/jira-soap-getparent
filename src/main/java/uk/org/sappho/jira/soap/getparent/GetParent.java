@@ -1,7 +1,5 @@
 package uk.org.sappho.jira.soap.getparent;
 
-import java.util.List;
-
 import com.atlassian.jira.rpc.exception.RemoteException;
 
 public interface GetParent {
@@ -12,5 +10,5 @@ public interface GetParent {
 
     public String getMovedIssueKey(String token, String issueKey) throws RemoteException;
 
-    public List<Object[]> getFieldHistory(String token, String issueKey, String fieldName) throws RemoteException;
+    public String getFieldChangeHistory(String token, String issueKey, String[] fieldNames) throws RemoteException;
 }

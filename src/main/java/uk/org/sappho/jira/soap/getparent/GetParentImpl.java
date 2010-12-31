@@ -2,7 +2,9 @@ package uk.org.sappho.jira.soap.getparent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.ofbiz.core.entity.GenericEntityException;
 
@@ -13,6 +15,7 @@ import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
 import com.atlassian.jira.issue.history.ChangeItemBean;
 import com.atlassian.jira.rpc.auth.TokenManager;
 import com.atlassian.jira.rpc.exception.RemoteException;
+import com.thoughtworks.xstream.XStream;
 
 public class GetParentImpl implements GetParent {
 
@@ -51,17 +54,21 @@ public class GetParentImpl implements GetParent {
         return issue != null ? issue.getKey() : null;
     }
 
-    public List<Object[]> getFieldHistory(String token, String issueKey, String fieldName) throws RemoteException {
+    public String getFieldChangeHistory(String token, String issueKey, String[] fieldNames) throws RemoteException {
 
-        List<Object[]> history = new ArrayList<Object[]>();
         tokenManager.retrieveUserNoPermissionCheck(token);
         MutableIssue issue = issueManager.getIssueObject(issueKey);
-        List<ChangeItemBean> changes = changeHistoryManager.getChangeItemsForField(issue, fieldName);
+        Map<String, List<FieldChange>> history = new HashMap<String, List<FieldChange>>();
         Calendar calendar = Calendar.getInstance();
-        for (ChangeItemBean change : changes) {
-            calendar.setTimeInMillis(change.getCreated().getTime());
-            history.add(new Object[] { calendar.getTime(), change.getFromString(), change.getToString() });
+        for (String fieldName : fieldNames) {
+            List<FieldChange> fieldChanges = new ArrayList<FieldChange>();
+            history.put(fieldName, fieldChanges);
+            List<ChangeItemBean> changes = changeHistoryManager.getChangeItemsForField(issue, fieldName);
+            for (ChangeItemBean change : changes) {
+                calendar.setTimeInMillis(change.getCreated().getTime());
+                fieldChanges.add(new FieldChange(calendar.getTime(), change.getFromString(), change.getToString()));
+            }
         }
-        return history;
+        return new XStream().toXML(history);
     }
 }
