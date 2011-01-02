@@ -51,4 +51,28 @@
 		</dependency>
 	</dependencies>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>axistools-maven-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>java2wsdl</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>java2wsdl</goal>
+						</goals>
+						<configuration>
+							<filename>sappho-getparent-v1.wsdl</filename>
+							<classOfPortType>uk.org.sappho.jira.rpc.soap.service.getparent.GetParentImpl</classOfPortType>
+							<location>http://localhost/services</location>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
