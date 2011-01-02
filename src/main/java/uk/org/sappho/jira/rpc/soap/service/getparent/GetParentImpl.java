@@ -17,6 +17,8 @@ import com.atlassian.jira.rpc.auth.TokenManager;
 import com.atlassian.jira.rpc.exception.RemoteException;
 import com.thoughtworks.xstream.XStream;
 
+import uk.org.sappho.jira.rpc.soap.common.getparent.FieldChange;
+
 public class GetParentImpl implements GetParent {
 
     private final TokenManager tokenManager;

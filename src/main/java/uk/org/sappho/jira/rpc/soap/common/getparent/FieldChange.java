@@ -1,4 +1,4 @@
-package uk.org.sappho.jira.rpc.soap.service.getparent;
+package uk.org.sappho.jira.rpc.soap.common.getparent;
 
 import java.util.Date;
 

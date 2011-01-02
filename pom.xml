@@ -66,8 +66,8 @@
 						</goals>
 						<configuration>
 							<filename>sappho-getparent-v1.wsdl</filename>
-							<classOfPortType>uk.org.sappho.jira.rpc.soap.service.getparent.GetParentImpl</classOfPortType>
-							<location>http://localhost/services</location>
+							<classOfPortType>uk.org.sappho.jira.rpc.soap.service.getparent.GetParent</classOfPortType>
+							<location>http://localhost/rpc/soap/sappho-getparent-v1</location>
 						</configuration>
 					</execution>
 				</executions>
